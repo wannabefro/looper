@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+  <link rel="stylesheet" href="style.css"/>
+  <title>Looper</title>
+  
+</head>
+<body>
+  <section id="section" ondragenter="return dragEnter(event)" ondrop="return dragDrop(event)"
+    ondragover="return dragOver(event)">
+  <div id="boxA" ondragstart="return dragStart(event)" draggable="true"></div>
+  <div id="boxB" ondragstart="return dragStart(event)" draggable="true"></div>
+  </section>
+  <div id="big" ondragenter="return dragEnter(event)" ondrop="return dragDrop(event)"
+  ondragover="return dragOver(event)">
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript" charset="utf-8">
+      function dragStart(ev) {
+        ev.dataTransfer.effectAllowed='move';
+        ev.dataTransfer.setData("Text", ev.target.getAttribute('id'));
+        ev.dataTransfer.setDragImage(ev.target,100,100);
+        return true;
+      };
+      function dragEnter(ev) {
+        ev.preventDefault();
+        return true;
+      }
+      function dragOver(ev) {
+        ev.preventDefault();
+      }
+      function dragDrop(ev) {
+        var data = ev.dataTransfer.getData("Text");
+        $(ev.target).append($('#'+data));
+        ev.stopPropagation();
+        return false;
+      }
+  </script>
+</body>
+</html>
