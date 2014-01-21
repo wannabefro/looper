@@ -3,21 +3,31 @@
 }
 
 #boxA, #boxB{
-  width: 200px;
-  height: 200px;
+  width: 100px;
+  height: 60px;
   background-color: green;
   display: inline-block;
 }
 
 section{
-  width: 400px;
-  height: 400px;
+  width: 500px;
+  height: 75px;
+  display:block;
   background-color: orange;
 }
 
-#big {
-  height: 400px;
-  width: 400px;
+.position{
+  width: 100px;
+  height: 60px;
+  display:inline-block;
+  border: 1px solid blue;
+}
+
+#track1, #track2, #track3 {
+  display: block;
+  height: 75px;
+  width: 500px;
   background-color: pink;
+  border: 1px solid orange;
 }
 

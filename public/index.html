@@ -13,15 +13,33 @@
   <div id="boxA" ondragstart="return dragStart(event)" draggable="true"></div>
   <div id="boxB" ondragstart="return dragStart(event)" draggable="true"></div>
   </section>
-  <div id="big" ondragenter="return dragEnter(event)" ondrop="return dragDrop(event)"
+  <div id="track1" ondragenter="return dragEnter(event)" ondrop="return dragDrop(event)"
   ondragover="return dragOver(event)">
+    <div class="position position1"></div>
+    <div class="position position2"></div>
+    <div class="position position3"></div>
+    <div class="position position4"></div>
+  </div>
+  <div id="track2" ondragenter="return dragEnter(event)" ondrop="return dragDrop(event)"
+  ondragover="return dragOver(event)">
+    <div class="position position1"></div>
+    <div class="position position2"></div>
+    <div class="position position3"></div>
+    <div class="position position4"></div>
+  </div>
+  <div id="track3" ondragenter="return dragEnter(event)" ondrop="return dragDrop(event)"
+  ondragover="return dragOver(event)">
+    <div class="position position1"></div>
+    <div class="position position2"></div>
+    <div class="position position3"></div>
+    <div class="position position4"></div>
   </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
   <script type="text/javascript" charset="utf-8">
       function dragStart(ev) {
         ev.dataTransfer.effectAllowed='move';
         ev.dataTransfer.setData("Text", ev.target.getAttribute('id'));
-        ev.dataTransfer.setDragImage(ev.target,100,100);
+        ev.dataTransfer.setDragImage(ev.target,50,25);
         return true;
       };
       function dragEnter(ev) {
